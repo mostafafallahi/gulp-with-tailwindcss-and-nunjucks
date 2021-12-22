@@ -1,0 +1,39 @@
+{% extends "views/layouts/main.html" %}
+
+{% block body %}
+
+    <div class="h-screen flex items-center justify-center flex-col">
+
+        <h1 class="text-4xl">Gulp with TailwindCSS and Nunjucks</h1>
+        <h2 class="text-slate-500 text-lg mt-5">By Mostafa Fallahi</h2>
+
+
+        {% set items = [
+            {
+                name : "TailwindCSS",
+                version : "v3.0.7",
+                link : "https://tailwindcss.com"
+            },
+            {
+                name : "GulpJs",
+                version : "v4.0.2",
+                link : "https://gulpjs.com/"
+            },
+            {
+                name : "gulp-nunjucks",
+                version : "v5.1.0",
+                link : "https://mozilla.github.io/nunjucks/"
+            }
+        ] %}
+
+
+        <div class="flex gap-10 mt-24 text-md">
+            {% for item in items %}   
+                {% include "views/components/linkItem.html" %}         
+            {% endfor %}
+        </div>
+
+
+    </div>
+
+{% endblock %}
